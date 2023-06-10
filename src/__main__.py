@@ -1,7 +1,6 @@
 from modules._executor import Executor
 import time 
 
-
 app = Executor()
 if __name__ == '__main__':
     
