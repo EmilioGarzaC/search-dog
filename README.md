@@ -6,7 +6,7 @@ When creating a new branch, be sure to follow this naming standard:
 
 '{*User story id*} / {*User story title*}"
 
-**Example**: 'H01-LecturaHtml'
+**Example**: 'H01/LecturaHtml'
 
 
 ### Running the program
