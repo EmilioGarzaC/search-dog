@@ -1,6 +1,7 @@
 from modules._executor import Executor
 import time 
 
+
 app = Executor()
 if __name__ == '__main__':
     
@@ -75,8 +76,4 @@ if __name__ == '__main__':
         cleanWordList = data['contentSplitOrdered']
         txtContent = '\n'.join([string for string in cleanWordList])
         app.writeToTxt('split-words', fileName.replace('.html', ''), content=txtContent)
-     
-    
-    
-    
     

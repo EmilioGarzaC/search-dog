@@ -8,7 +8,6 @@ When creating a new branch, be sure to follow this naming standard:
 
 **Example**: 'H01/LecturaHtml'
 
-
 ### Running the program
 
 python -m src
