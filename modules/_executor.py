@@ -2,14 +2,20 @@ import os
 import time
 from modules.htmlManager import htmlManager
 from modules.textManager import textManager
+from modules.fase2Manager import fase2Manager
 
 class Executor:
     def __init__(self):
         self.htmlMgr = htmlManager()
         self.txtMgr = textManager()
+        self.fase2Mgr = fase2Manager()
         pass
-    
-    
+
+    ################ FASE 2 ################   
+    def runFase2(self):
+        self.fase2Mgr.correr_fase_2()
+
+    ################ FASE 1 ################   
 
     def readHtmlFolder(self, folderPath):
         htmlData = {}

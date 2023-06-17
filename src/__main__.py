@@ -76,3 +76,6 @@ if __name__ == '__main__':
         txtContent = '\n'.join([string for string in cleanWordList])
         app.writeToTxt('split-words', fileName.replace('.html', ''), content=txtContent)
     
+
+    # FASE 2
+    app.runFase2()
