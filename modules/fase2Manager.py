@@ -9,7 +9,7 @@ class fase2Manager:
         self.incidenciasOptMgr = incidenciasOptMgr()
         pass
 
-    #HISTORIA H7
+    #HISTORIA H7 --- ACTIVIDAD 4
     def convertirMinusculas(self, directorio, output_path):
         archivos = glob.glob(os.path.join(directorio, '*'))
         archivos_txt = [archivo for archivo in archivos if archivo.endswith('.txt')]
@@ -27,7 +27,7 @@ class fase2Manager:
             with open(f'{output_path}\\{nuevo_nombre}', 'w') as new_file:
                 new_file.write(contenido_modificado)
 
-    # HISTORIA H9
+    # HISTORIA H9 ---- ACTIVIDAD 5
     def generar_archivos_frecuencia_alfabetica(self, origen, destino):
         archivos = os.listdir(origen)
         print(archivos)
@@ -45,7 +45,7 @@ class fase2Manager:
                 data_frame = pd.DataFrame(frecuencia_palabras.items(), columns=['TOKEN', 'REPETICIONES'])
                 data_frame.to_csv(ruta_destino, index=False, sep=',')
     
-    # HISTORIA H10
+    # HISTORIA H10 ------ ACTIVIDAD 6
     def generar_archivos_repeticiones(self, frequenciesFolder, output_path):
         aggregatedFrequencies = {}
         
@@ -68,6 +68,8 @@ class fase2Manager:
             new_file.write(f"TOKEN, REPETICIONES\n{fileBody}")
         pass
         # app.writeToTxt(path=frequenciesFolder, fileName='aggregated_frequencies', text=fileBody)
+
+    # HISTORIAS H11 Y H12 SON RELACIONADAS A LA ACTIVIDAD 6 Y ESTAN EN incidenciasMgr.py
 
      # LLAMADAS
     def correr_fase_2(self):
