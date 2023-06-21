@@ -3,10 +3,12 @@ from collections import Counter
 import glob
 import pandas as pd
 from modules.incidenciasOptMgr import incidenciasOptMgr
+from modules.postingManager import postingManager
 
 class fase2Manager:
     def __init__(self):
         self.incidenciasOptMgr = incidenciasOptMgr()
+        self.postingManager = postingManager()
         pass
 
     #HISTORIA H7 --- ACTIVIDAD 4
@@ -98,4 +100,8 @@ class fase2Manager:
         print("AGREGAR INCIDENCIAS START")
         self.incidenciasOptMgr.agregar_incidencias(f"{path_repeticiones}\\repeticiones.txt", path_alfabeticos, path_dataframe_completo)
         print("AGREGAR INCIDENCIAS END")
+
+        print("CREAR ARCHIVO POSTING")
+        path_posting = f"{output_files_path}\\posting"
+        self.postingManager.generatePostingFile(f"{path_dataframe_completo}\\dataframe_completo.txt", path_alfabeticos, path_posting)
         print("done")

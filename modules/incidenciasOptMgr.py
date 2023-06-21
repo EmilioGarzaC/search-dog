@@ -12,7 +12,7 @@ class incidenciasOptMgr:
         # Guardar el DataFrame actualizado  
         print(dataframe)
         with open(f'{output_path}\\dataframe_completo.txt', 'w') as new_file:
-            new_file.write(dataframe.to_string())
+            new_file.write(dataframe.to_csv(index=False))
         pass
 
     def agregar_columna(self, dataframe, nombre_columna, valores):
