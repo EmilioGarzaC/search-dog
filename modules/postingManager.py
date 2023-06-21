@@ -20,14 +20,12 @@ class postingManager:
             for file in folderFiles:
                     alpha_df= pd.read_csv(f'{data_path}/{file}')
                     if token in alpha_df["TOKEN"].values:
-                        #repeticiones = alpha_df.loc[alpha_df['REPETICIONES'] == token, 'REPETICIONES']
                         repeticiones = alpha_df[alpha_df.TOKEN==token].REPETICIONES.item()
                         new_col = pd.DataFrame({"DOCUMENTO":[file.replace("_modificado_frecuencias.txt", ".html")],
                                                 "REPETICIONES":[repeticiones]})
                         posting_df = posting_df._append(new_col, ignore_index = True)
         print(posting_df)
         with open(f'{output_path}\\posting.txt', 'w') as new_file:
-            new_file.write(posting_df.to_string())
+            new_file.write(posting_df.to_csv(index=False))
         pass
-    print("e")
             

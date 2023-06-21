@@ -1,8 +1,7 @@
 ############# TAG REMOVAL TIMES #############
-049.html, 0.0
-hard.html, 0.0
-medium.html, 0.0
-simple.html, 0.0
+A-0-perros-3-gatos-1-pato.html, 0.0
+B-1-perro-0-gatos-4-patos.html, 0.0
+C-4-perros-1-gato-1-pato.html, 0.0
 
 Total removal time: 0.0
 Total execution time: 0.0
