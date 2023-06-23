@@ -28,4 +28,39 @@ class postingManager:
         with open(f'{output_path}\\posting.txt', 'w') as new_file:
             new_file.write(posting_df.to_csv(index=False))
         pass
+
+    #ACTIVIDAD 10 
+    def reemplazar_columna_pesos_archivo(self, archivo_repeticiones, archivo_salida):
+        with open(archivo_repeticiones, 'r') as file:
+            posting = pd.read_csv(file)
+            pesos = []
+
+        for index, row in posting.iterrows():
+            repeticiones = row['REPETICIONES']
+            total_tokens = self.contar_tokens(row["DOCUMENTO"])
+            peso = repeticiones * 100 / total_tokens  # Función para calcular el peso basado en las repeticiones
+            print(f"{repeticiones} * 100 / {total_tokens} = {peso}")
+            pesos.append(peso)
+        
+        posting = self.agregar_columna(posting, 'PESO', pesos)
+        posting = posting.drop('REPETICIONES', axis=1)     
+        with open(archivo_salida, 'w') as new_file:
+            new_file.write(posting.to_csv(index=False))
+        pass
+
+    def contar_tokens(self, archivo):
+        root = os.path.dirname(os.path.abspath(__file__))
+        output_files_path = os.path.join(root, "..", "output-files")
+        ruta_archivo = f"{output_files_path}\\split-words\\{archivo}"
+        ruta_archivo = ruta_archivo.replace(".html", ".txt")
+        with open(ruta_archivo, 'r') as archivo_origen:
+            contenido = archivo_origen.read()
+            tokens = contenido.split()
+            return(len(tokens))        
+
+    def agregar_columna(self, dataframe, nombre_columna, valores):
+        dataframe[nombre_columna] = valores
+        return dataframe
+
+    
             

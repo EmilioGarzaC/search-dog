@@ -86,22 +86,26 @@ class fase2Manager:
         path_dataframe_completo = f"{output_files_path}\\dataframe_completo"
 
         print("CONVERTIR MINUSCULAS START")
-        self.convertirMinusculas(path_split_words, path_minusculas)
+        #self.convertirMinusculas(path_split_words, path_minusculas)
         print("CONVERTIR MINUSCULAS END")
 
         print("ARCHIVOS ORDENADOS ALFABETICAMENTE START")
-        self.generar_archivos_frecuencia_alfabetica(path_minusculas, path_alfabeticos)
+        #self.generar_archivos_frecuencia_alfabetica(path_minusculas, path_alfabeticos)
         print("ARCHIVOS ORDENADOS ALFABETICAMENTE END")
 
         print("ARCHIVOS ORDENADOS POR REPETICIONES START")
-        self.generar_archivos_repeticiones(path_alfabeticos, path_repeticiones)
+        #self.generar_archivos_repeticiones(path_alfabeticos, path_repeticiones)
         print("ARCHIVOS ORDENADOS POR REPETICIONES END")
 
         print("AGREGAR INCIDENCIAS START")
-        self.incidenciasOptMgr.agregar_incidencias(f"{path_repeticiones}\\repeticiones.txt", path_alfabeticos, path_dataframe_completo)
+        #self.incidenciasOptMgr.agregar_incidencias(f"{path_repeticiones}\\repeticiones.txt", path_alfabeticos, path_dataframe_completo)
         print("AGREGAR INCIDENCIAS END")
 
         print("CREAR ARCHIVO POSTING")
         path_posting = f"{output_files_path}\\posting"
-        self.postingManager.generatePostingFile(f"{path_dataframe_completo}\\dataframe_completo.txt", path_alfabeticos, path_posting)
+        #self.postingManager.generatePostingFile(f"{path_dataframe_completo}\\dataframe_completo.txt", path_alfabeticos, path_posting)
+
+        print("AGREGAR PESOS A POSTING")
+        path_pesos = f"{output_files_path}\\pesos\\pesos.txt"
+        self.postingManager.reemplazar_columna_pesos_archivo(f"{path_posting}\\posting.txt", path_pesos)
         print("done")

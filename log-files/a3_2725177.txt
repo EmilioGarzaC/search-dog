@@ -1,7 +1,7 @@
 ############# WORD SPLITTING AND SORTING TIMES #############
 A-0-perros-3-gatos-1-pato.html, 0.0
-B-1-perro-0-gatos-4-patos.html, 0.0
+B-1-perro-0-gatos-4-patos.html, 0.0010006427764892578
 C-4-perros-1-gato-1-pato.html, 0.0
 
 Total split & sorting time: 0.0
-Total execution time: 0.0009999275207519531
+Total execution time: 0.0

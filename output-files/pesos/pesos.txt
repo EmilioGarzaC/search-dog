@@ -1,0 +1,8 @@
+DOCUMENTO,PESO
+A-0-perros-3-gatos-1-pato.html,25.0
+B-1-perro-0-gatos-4-patos.html,80.0
+C-4-perros-1-gato-1-pato.html,16.666666666666668
+B-1-perro-0-gatos-4-patos.html,20.0
+C-4-perros-1-gato-1-pato.html,66.66666666666667
+A-0-perros-3-gatos-1-pato.html,75.0
+C-4-perros-1-gato-1-pato.html,16.666666666666668
