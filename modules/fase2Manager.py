@@ -73,7 +73,7 @@ class fase2Manager:
 
     # HISTORIAS H11 Y H12 SON RELACIONADAS A LA ACTIVIDAD 6 Y ESTAN EN incidenciasMgr.py
 
-     # LLAMADAS
+    # LLAMADAS
     def correr_fase_2(self):
         print("REPETICIONES: CUANTAS VECES APARECE EL TOKEN EN ESTE ARCHIVO")
         print("INCIDENCIAS: EN CUANTOS ARCHIVOS SALE EL TOKEN")
@@ -86,25 +86,32 @@ class fase2Manager:
         path_dataframe_completo = f"{output_files_path}\\dataframe_completo"
 
         print("CONVERTIR MINUSCULAS START")
-        #self.convertirMinusculas(path_split_words, path_minusculas)
+        self.convertirMinusculas(path_split_words, path_minusculas)
         print("CONVERTIR MINUSCULAS END")
 
         print("ARCHIVOS ORDENADOS ALFABETICAMENTE START")
-        #self.generar_archivos_frecuencia_alfabetica(path_minusculas, path_alfabeticos)
+        self.generar_archivos_frecuencia_alfabetica(path_minusculas, path_alfabeticos)
         print("ARCHIVOS ORDENADOS ALFABETICAMENTE END")
 
         print("ARCHIVOS ORDENADOS POR REPETICIONES START")
-        #self.generar_archivos_repeticiones(path_alfabeticos, path_repeticiones)
+        self.generar_archivos_repeticiones(path_alfabeticos, path_repeticiones)
         print("ARCHIVOS ORDENADOS POR REPETICIONES END")
 
         print("AGREGAR INCIDENCIAS START")
-        #self.incidenciasOptMgr.agregar_incidencias(f"{path_repeticiones}\\repeticiones.txt", path_alfabeticos, path_dataframe_completo)
+        self.incidenciasOptMgr.agregar_incidencias(f"{path_repeticiones}\\repeticiones.txt", path_alfabeticos, path_dataframe_completo)
         print("AGREGAR INCIDENCIAS END")
 
+        #ACTIVIDAD 7 PARTE 1
         print("CREAR ARCHIVO POSTING")
         path_posting = f"{output_files_path}\\posting"
-        #self.postingManager.generatePostingFile(f"{path_dataframe_completo}\\dataframe_completo.txt", path_alfabeticos, path_posting)
+        self.postingManager.generatePostingFile(f"{path_dataframe_completo}\\dataframe_completo.txt", path_alfabeticos, path_posting)
 
+        #ACTIVIDAD 7 PARTE 2
+        print("CREAR ARCHIVO INDICADOR")
+        path_indicador = f"{output_files_path}\\indicador\\indicador.txt"
+        self.postingManager.crear_archivo_indicador(f"{path_dataframe_completo}\\dataframe_completo.txt", path_indicador)
+
+        #ACTIVIDAD 10
         print("AGREGAR PESOS A POSTING")
         path_pesos = f"{output_files_path}\\pesos\\pesos.txt"
         self.postingManager.reemplazar_columna_pesos_archivo(f"{path_posting}\\posting.txt", path_pesos)

@@ -5,6 +5,11 @@ class postingManager:
     def __init__(self):
         pass
 
+    #utilidad
+    def agregar_columna(self, dataframe, nombre_columna, valores):
+        dataframe[nombre_columna] = valores
+        return dataframe
+
     #ACTIVIDAD 7 PARTE 1
     # Una función que haga un nuevo dataframe que va a ser el archivo de posting. 
     # En este dataframe, por cada token de la dataframe H11, va a buscar en que 
@@ -28,6 +33,25 @@ class postingManager:
         with open(f'{output_path}\\posting.txt', 'w') as new_file:
             new_file.write(posting_df.to_csv(index=False))
         pass
+
+    #ACTIVIDAD 7 PARTE 2
+    #entrada = posting.txt
+    #salida = diccionario.txt
+    def crear_archivo_indicador(self, archivo_entrada, archivo_salida):
+        # Read the file and create a DataFrame
+        h11_df = pd.read_csv(archivo_entrada)  # Replace 'input_file.csv' with your file path and name
+        ubicaciones = []
+        i = 0
+        for index, row in h11_df.iterrows():
+            ubicaciones.append(i)
+            i += row['INCIDENCIAS']
+        h11_df = self.agregar_columna(h11_df, "UBICACION", ubicaciones)
+        h11_df = h11_df.drop('INCIDENCIAS', axis=1)
+        # Output datatable to diccionario.txt file
+        with open(archivo_salida, 'w') as new_file:
+            new_file.write(h11_df.to_csv(index=False))
+        pass
+        print("Datos ordenados y guardados en el archivo:", archivo_salida)
 
     #ACTIVIDAD 10 
     def reemplazar_columna_pesos_archivo(self, archivo_repeticiones, archivo_salida):
@@ -58,9 +82,7 @@ class postingManager:
             tokens = contenido.split()
             return(len(tokens))        
 
-    def agregar_columna(self, dataframe, nombre_columna, valores):
-        dataframe[nombre_columna] = valores
-        return dataframe
+
 
     
             
