@@ -1,7 +1,7 @@
 ############# FILE READ TIMES #############
-A-0-perros-3-gatos-1-pato.html, 0.0009999275207519531
+A-0-perros-3-gatos-1-pato.html, 0.0
 B-1-perro-0-gatos-4-patos.html, 0.0
 C-4-perros-1-gato-1-pato.html, 0.0
 
-Total read time: 0.0009999275207519531
-Total execution time: 0.0009999275207519531
+Total read time: 0.0
+Total execution time: 0.0008909702301025391

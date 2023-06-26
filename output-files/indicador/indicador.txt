@@ -1,4 +1,1 @@
-TOKEN, REPETICIONES,UBICACION
-pato,6,0
-perro,5,3
-gato,4,5
+pato;6;0perro;5;3gato;4;5

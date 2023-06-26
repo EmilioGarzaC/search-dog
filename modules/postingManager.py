@@ -35,8 +35,6 @@ class postingManager:
         pass
 
     #ACTIVIDAD 7 PARTE 2
-    #entrada = posting.txt
-    #salida = diccionario.txt
     def crear_archivo_indicador(self, archivo_entrada, archivo_salida):
         # Read the file and create a DataFrame
         h11_df = pd.read_csv(archivo_entrada)  # Replace 'input_file.csv' with your file path and name
@@ -49,7 +47,9 @@ class postingManager:
         h11_df = h11_df.drop('INCIDENCIAS', axis=1)
         # Output datatable to diccionario.txt file
         with open(archivo_salida, 'w') as new_file:
-            new_file.write(h11_df.to_csv(index=False))
+            h11_df = h11_df.to_csv(sep=';', index=False, header=False)
+            h11_df = h11_df.replace('\n', '')
+            new_file.write(h11_df)
         pass
         print("Datos ordenados y guardados en el archivo:", archivo_salida)
 
