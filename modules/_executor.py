@@ -3,13 +3,24 @@ import time
 from modules.htmlManager import htmlManager
 from modules.textManager import textManager
 from modules.fase2Manager import fase2Manager
+from modules.fase3Manager import fase3Manager
+from modules.fase4Manager import fase4Manager
 
 class Executor:
     def __init__(self):
         self.htmlMgr = htmlManager()
         self.txtMgr = textManager()
         self.fase2Mgr = fase2Manager()
+        self.fase3Mgr = fase3Manager()
+        self.fase4Mgr = fase4Manager()
         pass
+
+    ################ FASE 3 ################   
+    def runFase4(self):
+        self.fase4Mgr.correr_fase_4()
+    ################ FASE 3 ################   
+    def runFase3(self):
+        self.fase3Mgr.correr_fase_3()
 
     ################ FASE 2 ################   
     def runFase2(self):

@@ -1,3 +1,0 @@
-TOKEN,REPETICIONES
-gato,3
-pato,1

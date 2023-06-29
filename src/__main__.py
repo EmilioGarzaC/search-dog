@@ -78,4 +78,9 @@ if __name__ == '__main__':
     
 
     # FASE 2
-    app.runFase2()
+    #app.runFase2()
+
+    # FASE 3
+    #app.runFase3()
+
+    app.runFase4()

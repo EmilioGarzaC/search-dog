@@ -1,3 +1,0 @@
-TOKEN,REPETICIONES
-pato,4
-perro,1

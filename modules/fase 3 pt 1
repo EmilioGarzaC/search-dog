@@ -1,0 +1,109 @@
+import os
+import pickle
+from hashtable import HashTable
+import pandas as pd
+import csv
+
+#ACTIVIDAD 7 PARTE 1
+    # Una función que haga un nuevo dataframe que va a ser el archivo de posting. 
+    # En este dataframe, por cada token de la dataframe H11, va a buscar en que 
+    # documento aparece ese token, y las repeticiones de esa palabra en el documento, 
+    # y va a agregar estas al dataframe nuevo. Al final esto se guarda como un archivo nuevo.
+def generatePostingFile(source_path, data_path, output_path):
+        h11_df= pd.read_csv(source_path)
+        posting_df = pd.DataFrame({"DOCUMENTO":[],
+                                "REPETICIONES":[]})
+        for index, row in h11_df.iterrows():
+            token = row['TOKEN']
+            folderFiles = os.listdir(data_path)
+            for file in folderFiles:
+                    alpha_df= pd.read_csv(f'{data_path}/{file}')
+                    if token in alpha_df["TOKEN"].values:
+                        repeticiones = alpha_df[alpha_df.TOKEN==token].REPETICIONES.item()
+                        new_col = pd.DataFrame({"DOCUMENTO":[file.replace("_modificado_frecuencias.txt", ".html")],
+                                                "REPETICIONES":[repeticiones]})
+                        posting_df = posting_df._append(new_col, ignore_index = True)
+        print(posting_df)
+        with open(f'{output_path}\\posting.txt', 'w') as new_file:
+            new_file.write(posting_df.to_csv(index=False))
+        pass
+
+#ACTIVIDAD 7 PARTE 2
+#entrada = posting.txt
+#salida = diccionario.txt
+
+def createDataframe(archivo_entrada,archivo_salida):
+
+
+    with open(archivo_entrada, "r") as f:
+        datos = [linea.strip().split(",") for linea in f]
+
+
+    datos_ordenados = sorted(datos, key=lambda x: x[0])
+
+
+    encabezados = ["TOKEN", "NUMERO DE DOCUMENTOS", "POSICION DEL PRIMER REGISTRO"]
+    datos_ordenados.insert(0, encabezados)
+
+
+    with open(archivo_salida, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerows(datos_ordenados)
+
+
+    print("Datos ordenados y guardados en el archivo:", archivo_salida)
+
+#ACTIVIDAD 8 PARTE 2
+# dictionary file = diccionario.txt
+#         
+def createHashtable(dictionaryFile):
+
+    # Leemos archivo diccionario
+    with open(dictionaryFile) as f:
+            lines = f.readlines()
+            
+    # Creamos tabla hash con espacio de 40 como mínimo
+            tablaHash = HashTable(round(len(lines)*1.2) if len(lines) > 50 else 40)
+            
+    # Leemos las lineas del archivo e insertamos los valores a tabla hash
+    for line in lines:
+                splitLine = line.split(';')
+                tablaHash[splitLine[0]] = [splitLine[1], splitLine[2]]
+
+
+    # Definimos spacing para el archivo (40 espacios, 8 ..., 8 ...)
+    delim = "%40s%8s%8s"
+
+    # Generamos el contenido para el archivo en base a la tabla hash
+    contenidoTxtHash = '\n'.join([delim % (hashRow[0][0], hashRow[0][1][0], hashRow[0][1][1]) if hashRow != None else delim % ('', 0, -1) for hashRow in tablaHash.data])
+
+    path_ascii_output = f"{output_files_path}\\hashtable_ascii\\hashtable.txt"
+
+    #write_hashtable_to_ascii_file(contenidoTxtHash, path_ascii_output)
+
+
+#ACTIVIDAD 8 PARTE 3
+
+
+
+
+root = os.path.dirname(os.path.abspath(__file__))
+output_files_path = os.path.join(root, "..", "output-files")
+path_alfabeticos = f"{output_files_path}\\ordenado_alfabetico"
+path_dataframe_completo = f"{output_files_path}\\dataframe_completo"
+
+print("CREAR ARCHIVO POSTING")
+path_posting = f"{output_files_path}\\posting"
+generatePostingFile(f"{path_dataframe_completo}\\dataframe_completo.txt", path_alfabeticos, path_posting)
+print("done")
+
+path_posting_read = f"{output_files_path}\\posting\\posting.txt"
+path_diccionario = f"{output_files_path}\\diccionario\\diccionario.txt"
+
+#createDataframe(path_posting_read, path_diccionario)
+
+createHashtable(path_diccionario)
+
+
+
+            
