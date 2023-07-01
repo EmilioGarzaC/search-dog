@@ -34,6 +34,7 @@ class fase4Manager:
             new_file.write(posting_indexado.to_csv(index=False))
         pass          
 
+
     def correr_fase_4(self):
         print("Fase 4")
         root = os.path.dirname(os.path.abspath(__file__))
@@ -51,4 +52,5 @@ class fase4Manager:
         print("ACTIVIDAD 11")
         print("INDEX DOCUMENTS")
         self.indexar_archivos(path_pesos, path_index, path_posting_index)
+        self.postingManager.limpiarDiccionario()
         print("FASE 4 TERMINADA")

@@ -62,15 +62,15 @@ class postingManager:
 
         # Leemos archivo diccionario
         with open(dictionaryFile) as f:
-                lines = f.readlines()
+            lines = f.readlines()
                 
-        # Creamos tabla hash con espacio de 40 como mínimo
-                tablaHash = HashTable(round(len(lines)*1.2) if len(lines) > 50 else 40)
+            # Creamos tabla hash con espacio de 40 como mínimo
+            tablaHash = HashTable(round(len(lines)*1.2) if len(lines) > 50 else 40)
                 
         # Leemos las lineas del archivo e insertamos los valores a tabla hash
         for line in lines:
-                    splitLine = line.split(';')
-                    tablaHash[splitLine[0]] = [splitLine[1], splitLine[2]]
+            splitLine = line.split(';')
+            tablaHash[splitLine[0]] = [splitLine[1], splitLine[2]]
 
 
         # Definimos spacing para el archivo (40 espacios, 8 ..., 8 ...)
@@ -92,13 +92,13 @@ class postingManager:
 
         print("Hashtable written to file successfully.")
 
-    #Actividad 9
+    #Actividad 12
     def limpiarDiccionario(self):
         root = os.path.dirname(os.path.abspath(__file__))
-        output_files_path = os.path.join(root, "..", "output-files")
-        dfStop = pd.read_csv(f"{output_files_path}\\stop-list.txt",  header=None)
-        dfDic = pd.read_csv(f"{output_files_path}\\diccionario\\diccionario.txt", sep=';', names=['TOKEN', 'REPETICIONES', 'UBICACION'])
-        print(dfDic)
+        output_files_path = "output-files"
+        dfStop = pd.read_csv(f"{output_files_path}/stop-list.txt",  header=None)
+        dfDic = pd.read_csv(f"{output_files_path}/diccionario/diccionario.txt", sep=';', names=['TOKEN', 'REPETICIONES', 'UBICACION'])
+        #print(dfDic)
         #if 1 in dfDic.columns:
         for index, row in dfDic.iterrows():
             # If the word is found in the stop list
@@ -113,7 +113,7 @@ class postingManager:
             elif len(row[0]) == 1:
                 dfDic = dfDic.drop(index)
             
-        with open(f'{output_files_path}\\limpio\\limpio.txt', 'w') as new_file:
+        with open(f'{output_files_path}/diccionario/diccionarioLimpio.txt', 'w') as new_file:
             new_file.write(dfDic.to_csv(index=False))
         pass
         #else:
@@ -150,3 +150,27 @@ class postingManager:
     def agregar_columna(self, dataframe, nombre_columna, valores):
             dataframe[nombre_columna] = valores
             return dataframe
+    
+    
+    # El archivo stop list no contiene palabras, el stop list no aplica
+    # ******REVISAR SI EL ARCHIVO ESTA CORRECTO
+    
+    # def generarPostingSinStopList(self, path):
+    #     root = os.path.dirname(os.path.abspath(__file__))
+    #     output_files_path = os.path.join(root, "..", "output-files")
+
+    #     for index, row in dfDic.iterrows():
+    #         # If the word is found in the stop list
+    #         if row[0] in set(dfStop[0]):
+    #             dfDic = dfDic.drop(index)
+                
+    #         # If the word repetitions are less than 5
+    #         elif row[1] < 5:
+    #             dfDic = dfDic.drop(index)
+                
+    #         # If the word has a length of 1
+    #         elif len(row[0]) == 1:
+    #             dfDic = dfDic.drop(index)
+            
+    #     with open(f'{output_files_path}\\diccionario\\postingLimpio.txt', 'w') as new_file:
+    #         new_file.write(dfDic.to_csv(index=False))
