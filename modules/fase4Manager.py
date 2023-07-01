@@ -110,12 +110,14 @@ class fase4Manager:
         path_pesos = f"{output_files_path}\\pesos\\pesos.txt"
         path_index = f"{output_files_path}\\index_documents\\index_documents.txt"
         path_diccionario = f"{output_files_path}\\diccionario"
+        path_posting_index = f"{output_files_path}\\index_posting\\index_posting.txt"
+        path_stoplist = f"{output_files_path}\\stop-list.txt"
         #Variables con los directorios que vamos a utilizar
         print("ACTIVIDAD 11")
         print("INDEX DOCUMENTS")
-        #self.indexar_archivos(path_pesos, path_index, path_posting_index)
+        self.indexar_archivos(path_pesos, path_index, path_posting_index)
         print("ACT 12: LIMPIAR DICCIONARIO")
-        #self.limpiarDiccionario(path_stoplist, f"{path_diccionario}\\diccionario.txt", f"{path_diccionario}\\diccionarioLimpio.txt")
+        self.limpiarDiccionario(path_stoplist, f"{path_diccionario}\\diccionario.txt", f"{path_diccionario}\\diccionarioLimpio.txt")
         #Gauch, elephants, CSCE , Arkansas, gift, abcdef, 20, 20.07, 123-456-7890, lawyer consumers, garden computer, United States laws
         while True:
             print("ACTIVIDAD 12: BUSCAR PALABRAS")
