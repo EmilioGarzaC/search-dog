@@ -1,0 +1,124 @@
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: Gauch
+RESULTADOS DE BUSQUEDA
+['009.html', '011.html', '016.html', '019.html', '009.html', '008.html', '010.html', '019.html', '002.html', '007.html', '002.html', '004.html']
+ACTIVIDAD 13: TOP 10
+ORDENADOS
+    DOCUMENTO      PESO
+878  010.html  1.574803
+883  004.html  1.339286
+874  016.html  1.144165
+877  008.html  0.469484
+879  019.html  0.337101
+875  019.html  0.297442
+881  007.html  0.108167
+876  009.html  0.098280
+873  011.html  0.055897
+Continuar? Ingresa N para salir.   
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: elephants
+RESULTADOS DE BUSQUEDA
+['007.html', '019.html', '007.html', '019.html', '011.html', '011.html', '019.html', '002.html', '007.html', '016.html', '002.html', '003.html', '009.html', '011.html', '019.html']
+ACTIVIDAD 13: TOP 10
+ORDENADOS
+     DOCUMENTO      PESO
+1117  003.html  1.438849
+1110  011.html  0.670766
+1115  016.html  0.457666
+1119  011.html  0.279486
+1114  007.html  0.144222
+1108  007.html  0.090139
+1112  019.html  0.059488
+1120  019.html  0.059488
+1111  011.html  0.055897
+Continuar? Ingresa N para salir.    
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: CSCE
+RESULTADOS DE BUSQUEDA
+['007.html', '009.html', '019.html', '002.html', '010.html', '016.html', '019.html', '002.html', '017.html', '019.html', '002.html']
+ACTIVIDAD 13: TOP 10
+ORDENADOS
+     DOCUMENTO      PESO
+1352  017.html  0.724638
+1349  016.html  0.228833
+1348  010.html  0.196850
+1344  007.html  0.090139
+1350  019.html  0.079318
+1353  019.html  0.059488
+1347  002.html  0.057110
+1351  002.html  0.057110
+1345  009.html  0.049140
+Continuar? Ingresa N para salir.     
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: Arkansas
+RESULTADOS DE BUSQUEDA
+['007.html', '011.html', '019.html', '002.html', '003.html', '007.html', '009.html', '011.html', '019.html', '004.html', '011.html', '007.html', '011.html', '007.html']
+ACTIVIDAD 13: TOP 10
+ORDENADOS
+     DOCUMENTO      PESO
+1364  004.html  2.678571
+1359  003.html  0.719424
+1363  019.html  0.138806
+1362  011.html  0.111794
+1365  011.html  0.111794
+1366  007.html  0.090139
+1358  002.html  0.085665
+1368  007.html  0.072111
+1356  011.html  0.055897
+Continuar? Ingresa N para salir.    
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: gift
+RESULTADOS DE BUSQUEDA
+['007.html', '019.html', '007.html', '007.html', '010.html', '011.html', '019.html', '002.html', '009.html', '010.html', '019.html', '002.html', '018.html', '019.html', '002.html']
+ACTIVIDAD 13: TOP 10
+ORDENADOS
+     DOCUMENTO      PESO
+1221  018.html  0.490196
+1215  019.html  0.376760
+1213  010.html  0.196850
+1218  010.html  0.196850
+1210  019.html  0.158636
+1214  011.html  0.111794
+1217  009.html  0.098280
+1211  007.html  0.090139
+1222  019.html  0.079318
+Continuar? Ingresa N para salir.      
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: abcdef
+RESULTADOS DE BUSQUEDA
+['011.html', '019.html', '002.html', '007.html', '011.html', '012.html', '019.html']
+ACTIVIDAD 13: TOP 10
+ORDENADOS
+     DOCUMENTO      PESO
+1809  012.html  0.341297
+1804  011.html  0.055897
+1808  011.html  0.055897
+1805  019.html  0.039659
+1806  002.html  0.028555
+1810  019.html  0.019829
+1807  007.html  0.018028
+Continuar? Ingresa N para salir.
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: 20
+20 no existe en el diccionario
+Continuar? Ingresa N para salir.20.07
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: 20.07
+20.07 no existe en el diccionario
+Continuar? Ingresa N para salir.
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: 123-456-7890
+123-456-7890 no existe en el diccionario
+Continuar? Ingresa N para salir.
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: lawyer consumers
+lawyer consumers no existe en el diccionario
+Continuar? Ingresa N para salir.
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: garden computer
+garden computer no existe en el diccionario
+Continuar? Ingresa N para salir.
+ACTIVIDAD 12: BUSCAR PALABRAS
+Escribe la palabra a buscar: United States laws
+united states laws no existe en el diccionario
+Continuar? Ingresa N para salir.

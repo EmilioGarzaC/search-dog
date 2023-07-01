@@ -98,5 +98,5 @@ class fase2Manager:
         print("ARCHIVOS ORDENADOS POR REPETICIONES END")
 
         print("AGREGAR INCIDENCIAS START")
-        self.incidenciasOptMgr.agregar_incidencias(f"{path_repeticiones}\\repeticiones.txt", path_alfabeticos, path_dataframe_completo)
+        #self.incidenciasOptMgr.agregar_incidencias(f"{path_repeticiones}\\repeticiones.txt", path_alfabeticos, path_dataframe_completo)
         print("AGREGAR INCIDENCIAS END")
